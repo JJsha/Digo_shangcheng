@@ -1,0 +1,135 @@
+@CHARSET "UTF-8";
+#headBar{
+	background-color: #F5F5F5; 
+	width: 100%; 
+	height:40px; 
+	position: relative;
+}
+#headBar_left{
+	position:absolute; 
+	width: 250px; 
+	height: 40px; 
+	top:-16px;
+}
+#headBar_left_area,#headBar_left_log{
+	list-style-type: none; 
+	float: left; 
+	margin: 12px; 
+	font-size: 12px; 
+}
+#headBar_left_log_login,#headBar_left_log_logup{
+	text-decoration: none; 
+	color: red; 
+}
+#headbar_right{
+	position:absolute; 
+	right:100px; 
+	width: 250px; 
+	height: 40px; 
+	top:-16px;
+}
+#headbar_right_digoCenter,#headbar_right_shoppingCar,#headbar_right_markPackage{
+	list-style-type: none; 
+	float: left; 
+	margin: 12px; 
+	color: #8B8B8B; 
+	font-size: 12px;
+}
+#headbar_right_digoCenter_aTag,#headbar_right_shoppingCar_aTag,#headbar_right_markPackage_aTag{
+	text-decoration: none; 
+	color: #8B8B8B;
+}
+#searchText{
+	position:absolute; 
+	outline:none; 
+	border-color:#8B8B8B; 
+	width:400px; 
+	height:35px; 
+	margin-top:40px; 
+	margin-left:50%; 
+	left:-250px; 
+	border-radius: 30px;
+}
+#searchTextBtn{
+	position:absolute; 
+	border:none; 
+	color:#8B8B8B; 
+	outline:none; 
+	width:60px; 
+	height:32px; 
+	border-radius: 22px;
+	margin-top:41px; 
+	margin-left:50%; 
+	left:89.3px;
+}
+#brandBar_iphone,#brandBar_sumsung,#brandBar_xiaomi,#brandBar_huawei,#brandBar_meizu{
+	float: left; 
+	margin-left: 175px; 
+	font-size: 24px;
+}
+#brandBar_iphone_aTag,#brandBar_sumsung_aTag,#brandBar_xiaomi_aTag,#brandBar_huawei_aTag,#brandBar_meizu_aTag{
+	color: #544F4B; 
+	text-decoration: none;
+}
+#iphonePic_img,#sumsungPic_img,#xiaomiPic_img,#huaweiPic_img,#meizuPic_img{
+	width: 100%; 
+	height: 100%;
+}
+#footBackground{
+	position:relative;
+	width: 100%;
+	height: auto;
+	background-color:#eeeeee;
+}
+#foot{
+	margin:auto;
+	width:80%;
+}
+#foot-top{
+	border-bottom: 1px solid white;
+	height:70px;
+}
+#foot-top ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    }
+#foot-top li {
+	margin-top:10px;
+    float: left;
+    width: 19.8%;
+    height: 25px;
+    
+    border-left: 1px solid white;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    display: list-item;
+}
+#foot-top img{
+	margin-bottom: -4px;
+}
+#foot-bottom{
+	margin-top:20px;
+	height:200px;
+}
+ .col-links {
+    float: left;
+    width: 15%;
+    height: 112px;
+    margin: 0 0 0 55px;
+}
+.col-links dt {
+    margin: -1px 0 26px;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #424242;
+}
+.col-links dd {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+.col-links dl{
+	display:block;
+	
+}

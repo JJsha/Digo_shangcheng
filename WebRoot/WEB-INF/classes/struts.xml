@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="show" extends="struts-default"  >
+	<interceptors>
+		<interceptor name="myAuth" class="com.mainPage.intercepter.Myinterceptor"></interceptor>
+		<interceptor-stack name="myDefaultStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="myAuth"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>	
+		 <global-results>
+			<result name="login">/digo_Login.jsp</result>
+		</global-results> 
+		
+		<action name="getGoods" class="ShowGoodsAction" method="getGoods">
+			<result name="success" >/ShowGoods.jsp</result>
+		</action>
+		<action name="addcar" class="ShowGoodsAction" method="addcar">
+			<result name="success" >/addcar.jsp</result>
+			<result name="max" >/ShowGoods.jsp</result>
+			
+			
+		</action>
+		
+	</package>
+	
+	<package name="digoMainPage"  extends="struts-default">
+		<interceptors>
+		<interceptor name="myAuth" class="com.mainPage.intercepter.Myinterceptor"></interceptor>
+		<interceptor-stack name="myDefaultStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="myAuth"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>	
+		 <global-results>
+			<result name="login">/digo_Login.jsp</result>
+		</global-results> 
+		
+		<action name="Digo_LoginAction" class="Digo_LoginAction" method="loginFB">
+			<result  type="chain" name="ok">${prePage}</result>
+			<result name="empty">/digo_Login.jsp</result>
+			<result name="main">/digo_mainPage.jsp</result>
+			<result name="error">/digo_Login.jsp</result>
+			<result name="input">/digo_Login.jsp</result>
+		</action>
+		<action name="Digo_LogupAction" class="Digo_LogupAction" method="LogupFB">
+			<result name="ok">/digo_Logup.jsp</result>
+			<result name="exist">/digo_Logup.jsp</result>
+			<result name="input">/digo_Logup.jsp</result>
+		</action>
+	</package>
+	
+	<package name="ajax" extends="json-default" >
+	      <action name="addfavorites" class="ShowGoodsAction" method="addfavorites">
+	            <result  type="json"></result>
+	       </action>
+	     
+	</package>
+	<package name="payment" extends="struts-default">
+	<interceptors>
+		<interceptor name="myAuth" class="com.mainPage.intercepter.Myinterceptor"></interceptor>
+		<interceptor-stack name="myDefaultStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="myAuth"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>	
+		 <global-results>
+			<result name="login">/digo_Login.jsp</result>
+		</global-results> 
+		<action name="msg" class="PaymentAction" method="getgoods">
+			<result name="success" >/payment.jsp</result>
+		</action>
+		<action name="payment" class="PaymentAction" method="createdd">
+			<result name="success" >successpay.jsp</result>
+			<result name="error" >error.jsp</result>
+		</action>
+		
+	</package>
+	
+	 <package name="collection" extends="struts-default">
+   <interceptors>
+		<interceptor name="myAuth" class="com.mainPage.intercepter.Myinterceptor"></interceptor>
+		<interceptor-stack name="myDefaultStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="myAuth"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>	
+		 <global-results>
+			<result name="login">/digo_Login.jsp</result>
+		</global-results> 
+		<action name="collectionaction" class="CollectionAction" method="collect">
+			<result name="success">/collection.jsp</result>
+			<result name="error">/collection.jsp</result>
+		</action>
+		
+		<action name="deletecollectionaction" class="DeleteCollectionAction" method="deletecollection">
+			<result name="success">/collection.jsp</result>
+			<result name="error">/collection.jsp</result>
+		</action>
+   </package>
+   
+  	
+	 <package name="car" extends="struts-default">
+   		<interceptors>
+		<interceptor name="myAuth" class="com.mainPage.intercepter.Myinterceptor"></interceptor>
+		<interceptor-stack name="myDefaultStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="myAuth"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>	
+		 <global-results>
+			<result name="login">/digo_Login.jsp</result>
+		</global-results> 
+		<action name="caraction" class="CarAction" method="car">
+			<result name="success">/car.jsp</result>
+			<result name="error">/car.jsp</result>
+		</action>
+     
+     	<action name="deletecaraction" class="DeleteCarAction" >
+			<result name="success">/car.jsp</result>
+			<result name="error">/car.jsp</result>
+		</action>
+     <action name="buyaction" class="DeleteCarAction" >
+			<result type="chain" name="success">msg</result>
+			<result name="error">/car.jsp</result>
+		</action>
+   </package>
+   
+      <package name="person" extends="struts-default">
+   <interceptors>
+		<interceptor name="myAuth" class="com.mainPage.intercepter.Myinterceptor"></interceptor>
+		<interceptor-stack name="myDefaultStack">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="myAuth"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>	
+		 <global-results>
+			<result name="login">/digo_Login.jsp</result>
+		</global-results> 
+		<action name="personaction" class="PersonAction" method="person" >
+			<result name="success">/person.jsp</result>
+			<result name="error">/person.jsp</result>
+		</action>
+		<action name="personupdateaction" class="PersonAction" method="update" >
+			<result name="success">/person.jsp</result>
+			<result name="error">/person.jsp</result>
+		</action>
+	 </package>
+		
+		<package name="search" extends="struts-default" >
+		  <action name="search" class="Searchaction" method="searchgoods">
+	           <result name="success">/search.jsp</result>
+	       </action>
+		</package>
+		<package name="Back" extends="struts-default" namespace="/Back">
+		<action name="Login" class="com.back.action.LoginAction" method="login">
+			<result name="success">/back.jsp</result>
+			<result name="input">/G_login.jsp</result>
+		</action>
+		<action name="AddClasses" class="com.back.action.ClassesAction" method="addclasses">
+			<result name="success">/AddClasses.jsp</result>
+			<result name="input">/AddClasses.jsp</result>
+		</action>
+		<action name="ShowClasses" class="com.back.action.ClassesAction" method="showclasses">
+			<result name="success">/ShowClasses.jsp</result>
+		</action>
+		<action name="DeleteClasses" class="com.back.action.ClassesAction" method="deleteclasses">
+			<result name="success">/loadSC.jsp</result>
+			<result name="input">/loadSC.jsp</result>
+		</action>
+	</package>
+	<package name="ma"  extends="struts-default">
+	<!-- 查询所有 -->
+		<action name="queryall" class="com.back.action.ShangpinAction" method="query">
+    		<result name="query_success">/ok_n.jsp</result>
+    		<result name="input">/false.jsp</result>
+		</action>
+		
+		<!-- 跳转到增加 -->
+		<action name="toadd" class="com.back.action.ShangpinAction" method="addInput">
+    		<result name="addInput">/add.jsp</result>
+		</action>
+		
+		<!-- 删除 -->
+		<action name="del" class="com.back.action.ShangpinAction" method="delete">
+    		<result name="del">/delSuccess.jsp</result>
+		</action>
+		
+		<!-- 更新 -->
+		<action name="update" class="com.back.action.ShangpinAction" method="update">
+    		<result name="up">/updateSuccess.jsp</result>
+		</action>
+		
+		<!-- 详细 -->
+		<action name="news" class="com.back.action.ShangpinAction" method="news">
+    		<result name="news">/news.jsp</result>
+    		<result name="input">/false.jsp</result>
+		</action>
+		
+		<!-- 添加 -->
+		<action name="add" class="com.back.action.ShangpinAction" method="add">
+    		<result name="add">/success.jsp</result>
+    		<result name="input">/false.jsp</result>
+		</action>
+		
+		<!--跳转到更新 -->
+		<action name="toup" class="com.back.action.ShangpinAction" method="toup">
+    		<result name="toup">/update.jsp</result>
+    		<result name="input">/false.jsp</result>
+		</action>
+		<action name="checkClasses" class="com.back.action.ShangpinAction" method="checkClasses">
+			<result name="success">/add.jsp</result>
+		</action>
+	</package>
+  
+</struts>    

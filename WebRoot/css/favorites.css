@@ -1,0 +1,151 @@
+#head{
+  
+  background-color:#F5F5F5;
+  height:100px;
+  width:auto;
+ 
+}
+fieldset, img {
+    border: 0;
+}
+#middle img { 
+width:100%; 
+height:100%;}
+div{
+	display:block;
+}
+
+#head ul li{
+	text-decoration: none;  /*去掉前面的圆点*/  
+    list-style: none;  
+    float: left;
+    margin-left:10%;	
+}
+#head ul{    
+	-webkit-margin-before:0;
+	-webkit-margin-after:0;
+	    -webkit-padding-start:0;
+	  
+}
+.li-head{
+	margin-left:20px;
+}
+#li1{
+	margin-left:10%;	
+	font-size:30px;
+	margin-right:20%;
+}
+#li3{
+	margin-left:65%;
+	
+}
+#h1{
+	background-color:#333333;
+	height:5px;
+	margin:0;
+	
+}
+
+#ul1{
+	margin:auto;
+	padding:0px;
+	overflow:hidden;
+	line-height:100px;
+}
+#li3{
+	margin-left:52%;
+}
+#main{
+	height:100vh;
+	
+}
+#left{
+	
+ float:left;
+ width:10%;
+ height:100vh;
+ display:inline;
+}#middle{
+	
+ float:left;
+ width:80%;
+ height:100vh;
+ display:inline;
+}#right{
+	 
+ float:left;
+ width:10%;
+ height:100vh;
+ display:inline;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+li{
+	text-decoration: none;  /*去掉前面的圆点*/  
+    list-style: none;  
+}
+
+.li2{
+	    height: 226px;
+    float: left;
+    text-align: center;
+    position: relative;
+    margin-bottom: 14px;
+	width: 150px;
+    margin-right: 10px;
+    margin-left:0;
+	
+}
+
+.img-controller-box{
+	border: #eee 1px solid;
+    margin-bottom: 11px;
+    height: 148px;
+    overflow: hidden;
+    position: relative;
+	
+}
+
+.img-controller-img-link{
+	width: 148px;
+    height: 148px;
+    display: block;
+    line-height: 145px;
+}
+
+.img-controller-img{
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%	
+}
+.img-item-title{
+	height: 23px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.img-item-title-link{
+	color:black;
+}
+.price-container{
+	word-wrap: break-word;
+    word-break: normal;
+    height: 25px;
+    line-height: 23px;
+    overflow: hidden;
+}
+.price{
+	font-family: arial;
+}
+.span-price{
+	color: #f40;
+    margin-right: 0;
+}
+.span-strong{
+	color: #f40;
+    font-weight: 700;
+    font-family: verdana,arial;
+}

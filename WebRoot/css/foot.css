@@ -1,0 +1,51 @@
+#foot{
+	margin:auto;
+	margin-top:100px;
+	width:80%;
+}
+#foot-top{
+	border-bottom: 1px solid #ABE1E1;
+	height:70px;
+}
+#foot-top ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    }
+#foot-top li {
+    float: left;
+    width: 19.8%;
+    height: 25px;
+    border-left: 1px solid #ABE1E1;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    display: list-item;
+}
+#foot-top img{
+	margin-bottom: -4px;
+}
+#foot-bottom{
+	margin-top:20px;
+	height:200px;
+}
+ .col-links {
+    float: left;
+    width: 15%;
+    height: 112px;
+    margin: 0 0 0 45px;
+}
+.col-links dt {
+    margin: -1px 0 26px;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #424242;
+}
+.col-links dd {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+.col-links dl{
+	display:block;
+	
+}

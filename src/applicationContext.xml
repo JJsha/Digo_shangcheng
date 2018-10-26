@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<context:annotation-config />
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>	
+	<bean id="ShowGoodsDao" class="com.ShowGoods.dao.ShowGoodsDaoImpl"/>	
+	<bean id="ShowGoodsservices" class="com.ShowGoods.services.ShowGoodsservicesImpl">
+		<property name="showGoodsDao" ref="ShowGoodsDao"></property>
+	</bean>
+	<bean id="ShowGoodsAction" class="com.ShowGoods.action.ShowGoodsAction">
+		<property name="showGoodsservices" ref="ShowGoodsservices"></property>
+	</bean>
+	
+	<bean id="PaymentDao" class="com.payment.dao.PaymentDaoImpl"/>	
+	<bean id="Paymentsservices" class="com.payment.services.PaymentservicesImpl">
+		<property name="paymentDao" ref="PaymentDao"></property>
+	</bean>
+	<bean id="PaymentAction" class="com.payment.action.PaymentAction">
+		<property name="paymentservices" ref="Paymentsservices"></property>
+	</bean>
+	
+	<bean id="MainPageDao" class="com.mainPage.dao.MainPageDaoImp"/>	
+	<bean id="MainPageService" class="com.mainPage.services.MainPageServiceImp">
+		<property name="mainPageDao" ref="MainPageDao"></property>
+	</bean>
+	<bean id="Digo_LoginAction" class="com.mainPage.action.Digo_LoginAction">
+		<property name="mainPageService" ref="MainPageService"></property>
+	</bean>
+	<bean id="Digo_LogupAction" class="com.mainPage.action.Digo_LogupAction">
+		<property name="mainPageService" ref="MainPageService"></property>
+	</bean>
+	
+	 <bean id="CollectionDao" class="com.Collection.dao.CollectionDaoImpl"/>
+     <bean id="CollectionServices" class="com.Collection.services.CollectionServicesImpl">
+     <property name="collectionDao" ref="CollectionDao"></property>
+     </bean>
+     <bean id="CollectionAction" class="com.Collection.Action.CollectionAction">
+		<property name="collectionServices" ref="CollectionServices"></property>
+	</bean>
+	  <bean id="DeleteCollectionAction" class="com.Collection.Action.DeleteCollectionAction">
+		<property name="collectionServices" ref="CollectionServices"></property>
+	</bean>
+	
+	 <bean id="CarDao" class="com.Car.dao.CarDaoImpl"/>
+     <bean id="CarServices" class="com.Car.services.CarServicesImpl">
+     <property name="carDao" ref="CarDao"></property>
+     </bean>
+     <bean id="CarAction" class="com.Car.Action.CarAction">
+		<property name="carServices" ref="CarServices"></property>
+	</bean>
+	  <bean id="DeleteCarAction" class="com.Car.Action.DeleteCarAction">
+		<property name="carServices" ref="CarServices"></property>
+	</bean>
+	
+	
+	 <bean id="PersonDao" class="com.Person.dao.PersonDaoImpl"/>
+     <bean id="PersonServices" class="com.Person.services.PersonServicesImpl">
+     <property name="personDao" ref="PersonDao"></property>
+     </bean>
+     <bean id="PersonAction" class="com.Person.Action.PersonAction">
+		<property name="personServices" ref="PersonServices"></property>
+	</bean>
+	
+	 <bean id="Searchdao" class="com.search.dao.SearchdaoImpl"/>
+     <bean id="Searchservices" class="com.search.services.SearchservicesImpl">
+     <property name="searchdao" ref="Searchdao"></property>
+     </bean>
+     <bean id="Searchaction" class="com.search.action.SearchAction">
+		<property name="searchservices" ref="Searchservices"></property>
+	</bean>
+	
+	</beans>
